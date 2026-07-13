@@ -8,6 +8,10 @@ export interface CalendarEvent {
   description: string;
   attendees: string[];
   status: string;
+  /** Google Calendar colorId ("1"–"11"), or "" if using the calendar's default color */
+  colorId: string;
+  /** Resolved hex color (e.g. "#d50000") derived from colorId */
+  colorHex: string;
 }
 
 export interface Spreadsheet {

@@ -54,9 +54,17 @@ export default function EventTable({ events }: EventTableProps) {
                     .filter(Boolean)
                     .join(' ')}
                 >
-                  <td className="px-2 py-1.5 truncate border-b border-gray-100">
-                    <span className="font-medium text-gray-900 truncate block">
-                      {event.title}
+                  <td className="px-2 py-1.5 border-b border-gray-100">
+                    <span className="flex items-center gap-1.5 min-w-0">
+                      {/* Color dot matching the event's Google Calendar color */}
+                      <span
+                        className="shrink-0 w-2.5 h-2.5 rounded-full inline-block"
+                        style={{ backgroundColor: event.colorHex }}
+                        title={event.colorId ? `Calendar color ${event.colorId}` : 'Default color'}
+                      />
+                      <span className="font-medium text-gray-900 truncate">
+                        {event.title}
+                      </span>
                     </span>
                   </td>
                   <td className="px-2 py-1.5 border-b border-gray-100 text-gray-700">
